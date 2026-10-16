@@ -110,3 +110,5 @@
 @media(max-width:767px){.envelope-runway .scene-actions{bottom:max(34px,env(safe-area-inset-bottom))}}
 @media(max-width:374px){.envelope-runway .envelope-wrap{top:55%}}
 @media(orientation:landscape) and (max-height:540px){.envelope-runway .scene-actions{left:auto;right:25px;width:190px;bottom:86px}}
+
+.festival-audio{position:fixed;left:12px;bottom:max(16px,env(safe-area-inset-bottom));z-index:100;width:90px;min-height:44px;display:flex;align-items:center;justify-content:center;gap:5px;border:1px solid #d4b877;border-radius:28px;background:#fff8e9;color:#682d27;box-shadow:0 3px 14px #45271824;font:600 12px var(--font-bengali),serif;cursor:pointer}.festival-audio span{font-size:20px}.festival-audio:focus-visible{outline:3px solid #8d392d;outline-offset:3px}.festival-audio[aria-pressed="true"]{background:#682d27;color:#fff8e9}
