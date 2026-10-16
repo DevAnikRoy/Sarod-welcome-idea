@@ -1,0 +1,1 @@
+export function sameOrigin(request:Request){const origin=request.headers.get('origin');if(!origin)return true;try{const parsed=new URL(origin);const host=request.headers.get('host')||new URL(request.url).host;return ['http:','https:'].includes(parsed.protocol)&&parsed.host.toLowerCase()===host.toLowerCase()}catch{return false}}
