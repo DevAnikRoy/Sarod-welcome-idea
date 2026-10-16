@@ -106,3 +106,19 @@ footer{background:#72170f;color:#f3dfb9;border-top:5px solid #b78948;padding:55p
 .invitation-experience .hero-copy>p:last-child{color:#58351f;text-shadow:0 1px 8px #fff8ed,0 0 18px #fff8ed}
 @media(max-width:767px){.invitation-experience>.site-header{background:linear-gradient(#fff8e9f2,#fff8e9dd 85%,#fff8e900)}}
 @media(orientation:landscape) and (max-height:540px){.invitation-experience>.site-header{background:linear-gradient(#fff8e9ee,#fff8e980,transparent)}.invitation-experience .hero-copy{position:absolute;top:85px;left:10%;width:65%;max-width:none}.invitation-experience .hero-copy h1{font-size:28px;line-height:1.15}.invitation-experience .hero-copy .ornament{margin:4px auto}.invitation-experience .hero-copy>p:last-child{display:none}.invitation-experience .envelope-wrap{width:56svh;top:75%;left:36%}.invitation-experience .scene-actions{right:25px;bottom:85px}}
+/* Tap-to-open: one viewport, solid paper folds, no scroll runway. */
+.invitation-experience .envelope-runway{height:100svh}
+.invitation-experience .experience-scene{position:relative;min-height:0;height:100svh}
+.invitation-experience .envelope-back{border:1px solid #bf9e69;border-radius:4px;background:linear-gradient(160deg,#c4a77b,#ead7b4 70%)}
+.invitation-experience .envelope-front{background:linear-gradient(32deg,transparent 49.6%,#b092652b 49.9%,#fff7e6 50.2%,transparent 50.5%),linear-gradient(-32deg,#eddbb9 49.5%,#fff9eb 50%,#f4e5c8 50.5%);border:1px solid #c6a775;clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);box-shadow:inset 0 -4px 10px #96744512}
+.invitation-experience .flap-face.front{background:linear-gradient(165deg,#fff6e4,#ead6b1);border-top:1px solid #d3b88b}
+.invitation-experience .flap-face.back{transform:rotateX(180deg);background:linear-gradient(#c8ab80,#f0dfbf 30%,#fbefd7);border-top:1px solid #c5a576}
+.invitation-experience .envelope-photo{display:block}
+.invitation-experience .letter{border:1px solid #b99b63;border-radius:2px;background:#fffaed;box-shadow:inset 0 0 0 7px #fff8e8,inset 0 0 0 8px #d5bc8b,0 4px 10px #51351720}
+.invitation-experience .envelope-tap-target:disabled{visibility:hidden}
+.invitation-experience .scene-actions p{max-width:95%;text-wrap:balance}
+.invitation-experience .experience-scene[data-phase="0"] .envelope-tap-target:after{content:'';position:absolute;width:19%;aspect-ratio:1;left:41%;top:42%;border:2px solid #d6a45c;border-radius:50%;animation:tap-seal-ring 2.2s ease-out infinite;pointer-events:none}
+@keyframes tap-seal-ring{0%{transform:scale(1);opacity:.85}80%,100%{transform:scale(1.65);opacity:0}}
+@media(max-width:767px){.invitation-experience .scene-actions p{font-size:11px;line-height:1.7}}
+@media(prefers-reduced-motion:reduce){.invitation-experience .experience-scene{min-height:0;height:100svh}.invitation-experience .envelope-runway{height:100svh}.invitation-experience .flap{display:block}.invitation-experience .letter{transform:none}.invitation-experience .envelope-photo{display:block}.invitation-experience .envelope-tap-target:after{animation:none}}
+.invitation-experience .flap-face.back{transform:rotateY(180deg)}
