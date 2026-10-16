@@ -104,3 +104,9 @@
 @media(max-width:374px){.envelope-runway .envelope-wrap{top:56%}.envelope-runway .read-prompt{top:12%}}
 .envelope-runway .replay-button{visibility:hidden}.envelope-runway [data-phase="3"] .replay-button{visibility:visible}@media(orientation:landscape) and (max-height:540px){.envelope-runway .read-prompt{display:none}}
 @media(min-width:768px){.envelope-runway .envelope-wrap{width:min(44vw,450px,60svh);top:56%}.envelope-runway .read-prompt{display:none}}@media(orientation:landscape) and (max-height:540px){.envelope-runway .envelope-wrap{width:64svh;top:55%}}
+/* Keep the site's controls clear of the host's fixed bottom-right badge. */
+.envelope-runway .replay-button{position:absolute;top:-30px;left:50%;transform:translateX(-50%);margin:0;white-space:nowrap}
+.envelope-runway .scene-actions p{transform:translateY(-110px);pointer-events:none}
+@media(max-width:767px){.envelope-runway .scene-actions{bottom:max(34px,env(safe-area-inset-bottom))}}
+@media(max-width:374px){.envelope-runway .envelope-wrap{top:55%}}
+@media(orientation:landscape) and (max-height:540px){.envelope-runway .scene-actions{left:auto;right:25px;width:190px;bottom:86px}}
