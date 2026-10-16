@@ -10,7 +10,9 @@ function valid(id:string){return validId.test(id)}
 function filename(id:string){if(!valid(id))throw new Error('INVALID_ID');return path.join(dataDir,`${id}.json`)}
 const hash=(token:string)=>createHash('sha256').update(token).digest();
 function hosted(){return process.env.CARD_STORAGE==='netlify'||Boolean(process.env.NETLIFY_BLOBS_CONTEXT||process.env.NETLIFY||(globalThis as typeof globalThis & {netlifyBlobsContext?:unknown}).netlifyBlobsContext)}
-function store(){return getStore({name:process.env.CARD_STORE_NAME||'shoroter-invitations-v1',consistency:'strong'})}
+// An explicit signal bypasses Next.js fetch deduplication: cancelling one side of a
+// cloned 404 response can otherwise wait forever inside the Blobs SDK.
+function store(){return getStore({name:process.env.CARD_STORE_NAME||'shoroter-invitations-v1',consistency:'strong',fetch:(input,init)=>fetch(input,{...init,cache:'no-store',signal:AbortSignal.timeout(10000)})})}
 export async function readStored(id:string):Promise<Stored|null>{
  if(!valid(id))return null;
  if(hosted())return await store().get(id,{type:'json'}) as Stored|null;
