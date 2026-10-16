@@ -12,28 +12,34 @@ export default function FestivalAudio() {
     if (!player) return;
     player.volume = 0.35;
     let scrollStarted = false;
-    let pending = false;
     let disposed = false;
     const start = async () => {
-      if (pending || manuallyPaused.current || !player.paused || document.hidden) return;
-      pending = true;
+      if (disposed || manuallyPaused.current || !player.paused || document.hidden) return;
       try {
         await player.play();
-        if (disposed) player.pause();
+        if (disposed || manuallyPaused.current || document.hidden) player.pause();
       } catch {
         // Mobile browsers may require the explicit music button.
-      } finally { pending = false; }
+      }
     };
     const onScrollIntent = () => { scrollStarted = true; void start(); };
     const onKey = (event: KeyboardEvent) => {
       if (['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', ' '].includes(event.key) &&
           !(event.target instanceof HTMLElement && event.target.closest('input,textarea,select,button,a,[contenteditable]'))) onScrollIntent();
     };
-    const onGestureEnd = () => { if (scrollStarted) void start(); };
+    const onGestureEnd = (event: Event) => {
+      // Retry directly inside a real activation; never defer play() to a timer.
+      // Leave the music toggle to its own handler so a stop tap cannot restart it.
+      if (event.target instanceof Element && event.target.closest('.festival-audio')) return;
+      if (scrollStarted) void start();
+    };
     const onVisibility = () => { if (document.hidden) player.pause(); };
     window.addEventListener('wheel', onScrollIntent, {passive: true});
     window.addEventListener('touchmove', onScrollIntent, {passive: true});
     window.addEventListener('touchend', onGestureEnd, {passive: true});
+    window.addEventListener('pointerdown', onGestureEnd, {passive: true});
+    window.addEventListener('pointerup', onGestureEnd, {passive: true});
+    window.addEventListener('click', onGestureEnd, {passive: true});
     window.addEventListener('keydown', onKey);
     document.addEventListener('visibilitychange', onVisibility);
     return () => {
@@ -42,6 +48,9 @@ export default function FestivalAudio() {
       window.removeEventListener('wheel', onScrollIntent);
       window.removeEventListener('touchmove', onScrollIntent);
       window.removeEventListener('touchend', onGestureEnd);
+      window.removeEventListener('pointerdown', onGestureEnd);
+      window.removeEventListener('pointerup', onGestureEnd);
+      window.removeEventListener('click', onGestureEnd);
       window.removeEventListener('keydown', onKey);
       document.removeEventListener('visibilitychange', onVisibility);
     };
@@ -60,7 +69,7 @@ export default function FestivalAudio() {
   }
 
   return <>
-    <audio ref={audio} src="/audio/durga-puja-dhak.mp3" loop preload="none"
+    <audio ref={audio} src="/audio/durga-puja-dhak.mp3" loop preload="auto"
       onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => setPlaying(false)}/>
     <button type="button" className="festival-audio" onClick={toggle}
       aria-label={playing ? 'ঢাকের মিউজিক বন্ধ করুন' : 'ঢাকের মিউজিক চালু করুন'} aria-pressed={playing}>
