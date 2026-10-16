@@ -122,3 +122,18 @@ footer{background:#72170f;color:#f3dfb9;border-top:5px solid #b78948;padding:55p
 @media(max-width:767px){.invitation-experience .scene-actions p{font-size:11px;line-height:1.7}}
 @media(prefers-reduced-motion:reduce){.invitation-experience .experience-scene{min-height:0;height:100svh}.invitation-experience .envelope-runway{height:100svh}.invitation-experience .flap{display:block}.invitation-experience .letter{transform:none}.invitation-experience .envelope-photo{display:block}.invitation-experience .envelope-tap-target:after{animation:none}}
 .invitation-experience .flap-face.back{transform:rotateY(180deg)}
+/* Once entered, scrolling scrubs the same opening and closing sequence. */
+.invitation-experience .envelope-runway{height:220svh}
+.invitation-experience .experience-scene{position:sticky;top:0;height:100svh;min-height:0}
+.invitation-experience .envelope-photo{mask-image:radial-gradient(ellipse 10.2% 16% at 51% 50.5%,transparent 98%,#000 100%)}
+.seal-pieces{position:absolute;inset:-1%;z-index:9;pointer-events:none}
+.seal-piece{position:absolute;inset:0;transform-origin:51% 50.5%;mask-image:radial-gradient(ellipse 10.2% 16% at 51% 50.5%,#000 98%,transparent 100%);will-change:transform,opacity}
+.seal-piece img{position:absolute;inset:0;width:100%;max-width:none;height:100%;object-fit:fill}
+.seal-left{clip-path:polygon(0 0,51% 0,51% 34%,50.3% 40%,52% 45%,50% 50%,51.5% 55%,50% 61%,51% 67%,51% 100%,0 100%)}
+.seal-right{clip-path:polygon(51% 0,100% 0,100% 100%,51% 100%,51% 67%,50% 61%,51.5% 55%,50% 50%,52% 45%,50.3% 40%,51% 34%)}
+.invitation-experience .experience-scene[data-phase="0"] .envelope-tap-target:after{width:22%;left:51%;top:50.5%;border:1px solid #e3bc78;box-shadow:0 0 9px #edc77670;transform:translate(-50%,-50%);animation:seal-invitation-glow 3s ease-out infinite}
+@keyframes seal-invitation-glow{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.3}45%{transform:translate(-50%,-50%) scale(1.12);opacity:.95}80%{transform:translate(-50%,-50%) scale(1.2);opacity:0}}
+.invitation-experience .envelope-tap-target:hover:after,.invitation-experience .envelope-tap-target:focus-visible:after{border-color:#fff0c2}
+@media(prefers-reduced-motion:reduce){.invitation-experience .envelope-runway{height:220svh}.invitation-experience .experience-scene{position:sticky;height:100svh}.invitation-experience .envelope-tap-target:after{animation:none}}
+.invitation-experience [data-phase="0"] .envelope-photo{mask-image:none}
+.invitation-experience [data-phase="0"] .seal-pieces{visibility:hidden}
