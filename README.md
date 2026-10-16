@@ -30,7 +30,7 @@ Open `http://YOUR_COMPUTER_WIFI_IP:3001` on each device. The machine must stay o
 - Server-side upload size/type/decode limits, JPEG re-encoding and metadata removal; no uploaded SVG/HTML execution.
 - Five simultaneous independent creations verified by `scripts/verify-api.mjs`. The test removes only its own generated cards.
 - Locally hosted optimized WebP festival photos, real sources credited on `/credits` and in `design/asset-sources.md`.
-- Scroll-controlled envelope on desktop; unpinned scrolling on mobile; direct open button and reduced-motion fallback.
+- One scroll timeline on desktop and mobile, with a CSS sticky viewport, reversible paper folds, shared button/scroll behavior, replay, and a reduced-motion fallback.
 
 ## Storage and hosting
 

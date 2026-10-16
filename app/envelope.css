@@ -1,0 +1,106 @@
+/* A native sticky viewport keeps the paper in view on touch devices, without
+   ScrollTrigger pin spacers or reparenting during browser toolbar resizes. */
+.envelope-runway{position:relative;height:280svh;isolation:isolate}
+.envelope-runway .experience-scene{position:sticky;top:0;height:100svh;min-height:0;max-height:none;padding:clamp(24px,4svh,45px) 20px;display:block;overflow:hidden;isolation:isolate}
+.envelope-runway .hero-copy{max-width:800px;margin:0 auto;will-change:transform,opacity}
+.envelope-runway .hero-copy h1{font-size:clamp(30px,4.2vw,56px);line-height:1.55;margin-bottom:12px}
+.envelope-runway .hero-copy .eyebrow{margin-bottom:10px}
+.envelope-runway .hero-copy>p:last-child{font-size:16px;line-height:1.8}
+.envelope-runway .envelope-wrap{position:absolute;left:50%;top:59%;transform:translate(-50%,-50%);width:min(78vw,490px,68svh);margin:0;z-index:4}
+.envelope-runway .envelope{filter:none;perspective:1600px;will-change:transform;aspect-ratio:1.62}
+.envelope-runway .envelope-shadow{bottom:-16px;height:28px;filter:blur(12px);opacity:.6}
+.envelope-runway .envelope-back{border-radius:5px;background:linear-gradient(160deg,#b59560,#e5cfaa 50%,#b28d50);box-shadow:inset 0 3px 6px #54351955,0 8px 18px #543b261a}
+.envelope-runway .envelope-front{background:linear-gradient(32deg,transparent 49.6%,#b99a693b 49.8%,#fff9e9 50.1%,transparent 50.5%),linear-gradient(-32deg,#ead6b2 49.6%,#fff8e8 50%,#eeddbc 50.4%);border-radius:4px;box-shadow:inset 0 -6px 12px #8c693e12;will-change:transform}
+.envelope-runway .envelope-front:after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.13;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath filter='url(%23p)' d='M0 0h150v150H0z'/%3E%3C/svg%3E")}
+.envelope-runway .flap{transform-origin:50% 0;transform-style:preserve-3d;will-change:transform;pointer-events:none}
+.envelope-runway .flap-face{backface-visibility:hidden;-webkit-backface-visibility:hidden;filter:none}
+.envelope-runway .flap-face.front{background:linear-gradient(175deg,#fff7e6,#eddbb9);box-shadow:inset 0 2px #fffdf4}
+.envelope-runway .flap-face.back{background:linear-gradient(#bca06e,#e6cfaa 18%,#efdfc0);border-top:2px solid #a8844e}
+.fold-shade{position:absolute;inset:0;display:block;background:linear-gradient(#4c341d90,transparent);opacity:0;pointer-events:none}
+.envelope-runway .letter{padding:clamp(12px,2vw,24px) 16px;box-shadow:inset 0 0 0 7px #fcf6e9,inset 0 0 0 8px #d1b77e,0 7px 16px #4e381c25;will-change:transform;transform-origin:50% 90%;border-radius:2px}
+.envelope-runway .letter>svg{width:45px;height:30px}
+.envelope-runway .letter p{margin:9px 0 5px;font-size:clamp(11px,1.4vw,14px);line-height:1.5;max-height:3em;overflow:hidden}
+.envelope-runway .letter h2{font-size:clamp(22px,3.2vw,35px);line-height:1.65}
+.letter-signature{display:flex;justify-content:center;align-items:center;gap:9px;margin-top:10px;font-family:'Noto Serif Bengali',serif;color:var(--red);font-size:clamp(12px,1.5vw,17px);line-height:1.6;overflow-wrap:anywhere}
+.letter-signature img{width:30px;height:30px;border-radius:50%;object-fit:cover;border:1px solid var(--gold);padding:2px}
+.letter-shadow{position:absolute;z-index:2;left:7%;right:7%;top:1px;height:10px;background:#49351d;filter:blur(6px);opacity:0;pointer-events:none}
+.envelope-runway .seal{will-change:transform,opacity;backface-visibility:hidden;opacity:1}
+.envelope-runway .seal[disabled]{cursor:wait}
+.envelope-runway .scene-actions{position:absolute;bottom:max(28px,env(safe-area-inset-bottom));left:20px;right:20px;margin:0;z-index:7}
+.envelope-runway .scene-actions .primary{min-height:46px;font-size:15px;padding:10px 25px}
+.envelope-runway .scene-actions p{display:table;margin:10px auto 0;font-size:12px;min-height:23px;line-height:1.8}
+.read-prompt{position:absolute;top:19%;left:15px;right:15px;opacity:0;transform:translateY(10px);font-family:'Noto Serif Bengali',serif;color:var(--red);font-size:22px;pointer-events:none}
+.scroll-progress{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:7px}
+.scroll-progress span{width:20px;height:2px;background:#85694530;border-radius:2px}
+.scroll-progress .active{background:#96713f}
+.replay-button{display:block;margin:3px auto 0;border:0;background:transparent;color:var(--red);font-size:11px;min-height:30px;text-decoration:underline;text-underline-offset:4px}
+.envelope-runway .festival-poster{will-change:opacity,transform}
+.envelope-runway .idol-poster{top:34%;right:4%;width:clamp(150px,16vw,230px)}
+.envelope-runway .diya-poster{top:45%;left:4%;width:clamp(150px,16vw,230px)}
+@media(max-width:767px){
+ .envelope-runway{height:270svh}
+ .envelope-runway .experience-scene{padding:26px 20px;height:100svh;min-height:0;max-height:none}
+ .envelope-runway .hero-copy h1{font-size:clamp(28px,6.4vw,40px);line-height:1.65}
+ .envelope-runway .hero-copy .eyebrow{font-size:11px;letter-spacing:.8px}
+ .envelope-runway .hero-copy>p:last-child{font-size:13px;max-width:310px;margin:auto}
+ .envelope-runway .envelope-wrap{top:59%;width:min(84vw,430px,68svh);margin:0}
+ .envelope-runway .letter{padding:14px 12px}
+ .envelope-runway .letter>svg{height:24px;width:37px}
+ .envelope-runway .letter p{font-size:11px;margin:7px 0 4px}
+ .envelope-runway .letter h2{font-size:25px}
+ .letter-signature{margin-top:9px;font-size:14px}
+ .envelope-runway .idol-poster{top:31%;right:-5px;width:95px}
+ .envelope-runway .idol-poster img{height:100px}
+ .envelope-runway .diya-poster{top:34%;left:-7px;width:95px}
+ .envelope-runway .diya-poster img{height:67px}
+ .envelope-runway .festival-poster figcaption{font-size:8px}
+ .envelope-runway .scene-actions{bottom:max(30px,env(safe-area-inset-bottom))}
+ .envelope-runway .envelope-address{font-size:11px;bottom:14px}
+ .read-prompt{font-size:19px;top:18%}
+}
+@media(max-width:374px){
+ .envelope-runway .hero-copy h1{font-size:27px}
+ .envelope-runway .hero-copy>p:last-child{font-size:12px}
+ .envelope-runway .envelope-wrap{width:84vw;top:60%}
+ .envelope-runway .letter{padding:10px}
+ .envelope-runway .letter h2{font-size:22px}
+ .envelope-runway .letter>svg{height:20px}
+ .letter-signature{font-size:12px;margin-top:6px}
+ .letter-signature img{width:24px;height:24px}
+ .envelope-runway .seal{width:52px;height:52px;left:calc(50% - 26px)}
+}
+@media(orientation:landscape) and (max-height:540px){
+ .envelope-runway .hero-copy h1{font-size:26px;line-height:1.4}
+ .envelope-runway .hero-copy .eyebrow{font-size:10px;margin-bottom:3px}
+ .envelope-runway .hero-copy>p:last-child{display:none}
+ .envelope-runway .experience-scene{padding-top:12px}
+ .envelope-runway .envelope-wrap{width:76svh;top:60%}
+ .envelope-runway .scene-actions{bottom:18px}
+ .envelope-runway .scene-actions .primary{min-height:38px;padding:5px 18px;font-size:12px}
+ .envelope-runway .scene-actions p{display:none}
+ .envelope-runway .festival-poster{top:35%;width:100px}
+ .envelope-runway .festival-poster img{height:90px}
+ .envelope-runway .letter{padding:10px}
+ .envelope-runway .letter>svg{height:18px}
+ .envelope-runway .letter h2{font-size:22px}
+ .envelope-runway .letter p{font-size:10px;margin:4px 0}
+ .letter-signature{font-size:12px;margin-top:5px}
+ .read-prompt{top:8%;font-size:16px}
+ .replay-button{min-height:23px;margin:0 auto}
+}
+@media(prefers-reduced-motion:reduce){
+ .envelope-runway{height:auto}
+ .envelope-runway .experience-scene{position:relative;height:100svh;min-height:560px}
+ .envelope-runway .hero-copy{margin:0 auto;opacity:1}
+ .envelope-runway .hero-copy h1{font-size:28px}
+ .envelope-runway .envelope-wrap{top:66%;margin:0}
+ .envelope-runway .flap,.envelope-runway .seal{display:none}
+ .envelope-runway .letter{transform:translateY(-60%)}
+ .envelope-runway .festival-poster{opacity:.3}
+ .envelope-runway .scroll-progress,.envelope-runway .replay-button,.read-prompt{display:none}
+}
+
+.envelope-runway .flap-face.back{transform:rotateY(180deg)}
+@media(max-width:374px){.envelope-runway .envelope-wrap{top:56%}.envelope-runway .read-prompt{top:12%}}
+.envelope-runway .replay-button{visibility:hidden}.envelope-runway [data-phase="3"] .replay-button{visibility:visible}@media(orientation:landscape) and (max-height:540px){.envelope-runway .read-prompt{display:none}}
+@media(min-width:768px){.envelope-runway .envelope-wrap{width:min(44vw,450px,60svh);top:56%}.envelope-runway .read-prompt{display:none}}@media(orientation:landscape) and (max-height:540px){.envelope-runway .envelope-wrap{width:64svh;top:55%}}
