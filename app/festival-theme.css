@@ -1,0 +1,107 @@
+/* The sunset, cotton paper and vermilion seal follow the supplied reference. */
+:root{--paper:#fcf4e5;--red:#990d09;--deep:#6c100c;--gold:#b17b35;--ink:#65432e;--line:#ba8b4545}
+body{background:#fcf4e5;font-family:'Hind Siliguri',sans-serif}
+h1,h2,h3,.brand{font-family:'Noto Serif Bengali',serif}
+.site-header{height:112px;border:0;background:linear-gradient(180deg,#fff9edee,#fff9ed75);padding:20px 7.5%;gap:35px}
+.brand{display:flex;align-items:center;gap:12px;font-size:34px;font-weight:600;letter-spacing:-1.5px}
+.brand .brand-sprig{height:60px;width:35px;flex:none;color:#c68c40}
+.brand .brand-words{display:block;color:var(--red);font:inherit;letter-spacing:inherit;margin:0}
+.brand small{display:block;font-family:'Hind Siliguri',sans-serif;font-weight:400;font-size:11px;letter-spacing:2.4px;color:#8b735b;margin-top:5px}
+.site-header nav{gap:36px;margin-right:25%;font-family:Georgia,serif;font-size:14px;white-space:nowrap}
+.site-header nav>a{position:relative;min-height:44px;display:flex;align-items:center;color:#594d44;padding:8px 0}
+.site-header nav>a[aria-current=page]{color:var(--red);font-weight:bold}
+.site-header nav>a[aria-current=page]:after{content:'';position:absolute;bottom:0;left:5%;right:5%;height:1px;background:linear-gradient(90deg,transparent,var(--red),transparent)}
+.site-header nav>a[aria-current=page]:before{content:'';position:absolute;bottom:-3px;left:calc(50% - 3px);width:6px;height:6px;border-radius:50%;background:var(--red)}
+.nav-lotus{display:flex;align-items:center;color:var(--red);border-left:1px solid var(--line);padding-left:23px}
+.nav-lotus svg{width:33px;height:28px}
+.invitation-experience>.site-header{position:absolute;top:0;left:0;right:0;z-index:40;background:transparent}
+.invitation-experience .envelope-runway{height:270svh}
+.invitation-experience .experience-scene{height:100svh;min-height:0;padding:clamp(115px,14svh,155px) 16px 0;background:#f4dfb8;overflow:hidden}
+.invitation-experience .experience-scene:after{display:none}
+.invitation-experience .autumn-field{inset:0;opacity:1;mask-image:none;background:url('/images/festival-hero.webp') center/cover no-repeat;z-index:-1}
+.invitation-experience .hero-copy{max-width:920px;margin:0 auto;text-shadow:0 1px 16px #fff1d9a0}
+.invitation-experience .hero-copy .eyebrow{display:none}
+.invitation-experience .hero-copy h1{font-size:clamp(42px,5.35vw,82px);line-height:1.2;letter-spacing:-2.5px;margin:0 0 8px;font-weight:500;color:#980a05}
+.invitation-experience .hero-copy h1 span{font-size:.79em;line-height:1.4;color:#7c480d;white-space:nowrap}
+.invitation-experience .hero-copy .ornament{margin:10px auto 18px;color:#946128;gap:10px}
+.invitation-experience .hero-copy .ornament span{width:95px}
+.invitation-experience .hero-copy .ornament svg{width:30px;height:22px}
+.invitation-experience .hero-copy>p:last-child{max-width:480px;margin:auto;font-family:'Noto Serif Bengali',serif;font-size:clamp(14px,1.35vw,21px);line-height:1.55;color:#74503b;text-wrap:balance}
+.invitation-experience .envelope-wrap{width:min(45vw,700px,70svh);top:66%;z-index:5;filter:drop-shadow(0 14px 10px #341a1450)}
+.invitation-experience .envelope{aspect-ratio:1.62;transform:rotate(0);filter:none}
+.envelope-photo{position:absolute;inset:-1% -1%;width:102%;max-width:none;height:102%;object-fit:fill;z-index:7;pointer-events:none}
+.invitation-experience .envelope-back{background:#ddc399;border:0}
+.invitation-experience .flap-face.front,.invitation-experience .envelope-front{background-color:#f2e1bd;background-image:linear-gradient(135deg,#fff4dd55,#d2b17d20),url('/images/handmade-envelope.webp');background-size:100% 100%;background-blend-mode:soft-light,normal}
+.invitation-experience .flap-face.front{background-size:100% 100%;background-position:top center}
+.invitation-experience .seal{z-index:8;opacity:0!important}
+.invitation-experience .scene-actions{bottom:max(18px,env(safe-area-inset-bottom));left:20px;right:20px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.invitation-experience .scene-actions p{order:-1;transform:none;margin:0;min-height:0;font-size:12px;color:#6a3b20;background:#fff7e8e8;border:1px solid #bc945e66;padding:4px 16px;box-shadow:0 3px 10px #4b271514}
+.invitation-experience .scene-actions .primary{min-height:42px;padding:8px 25px;font-size:14px;background:#8f1008;border-color:#c87b4e;box-shadow:0 3px 15px #5f170c40}
+.invitation-experience .replay-button{position:static;transform:none;order:2;background:#fff8e8e6;padding:0 15px;border-radius:20px}
+.invitation-experience .scroll-progress{display:none}
+.invitation-experience .read-prompt{top:15%;display:block;color:#823819;background:#fff3d8dc;left:50%;right:auto;transform:translate(-50%,10px);white-space:nowrap;padding:10px 30px;border:1px solid #ba8b4580;border-radius:2px;font-size:20px}
+.primary{border-radius:5px;background:linear-gradient(145deg,#ad2113,#850e08);border:1px solid #a45429;box-shadow:0 5px 14px #70251020}
+.outline{border-radius:5px;border-color:#b78c54;color:#84291b}
+.greeting{background:radial-gradient(ellipse at 18% 30%,#fffaf0,transparent 65%),#f7ead2;padding:110px 7.5%;border-top:1px solid #bc8b4b70}
+.greeting:before{content:'';position:absolute;inset:18px;border:1px solid #c59c5833;pointer-events:none}
+.greeting-layout{max-width:1200px;gap:90px}
+.greeting-aside h2{color:#92140c;line-height:1.65}
+.greeting-aside>img{border:7px solid #fdf4df;outline:1px solid #bb914e;box-shadow:0 15px 35px #68411d25;transform:rotate(-3deg);width:88%}
+.greeting-aside .eyebrow{color:#9b6a2e}
+.greeting-card{background:#fff7e7;box-shadow:0 18px 45px #68402125,0 0 0 5px #f4e4c8,0 0 0 6px #bc945e;border-color:#bb8a40;padding:12px}
+.card-content{border-color:#cda45c}.greeting-card h2{color:#9a1009}.card-kicker{color:#9d6c2d}.signature strong{color:#8d2415}
+.card-idol img{filter:sepia(.16) saturate(.85)}
+.halo{border-color:#bb8b4140;outline-color:#bb8b412b}
+.festival-story{background:#fff6e5;border-top:1px solid #c9a66d60;min-height:520px}
+.story-photo{overflow:hidden}.story-photo img{height:100%;min-height:520px;object-fit:cover;filter:sepia(.12) saturate(.85)}
+.story-copy{padding:65px 12%;background:radial-gradient(ellipse at 90% 10%,#e9c58330,transparent 65%)}
+.story-copy h2{font-size:clamp(30px,3.3vw,48px);line-height:1.65}.story-copy>svg{color:#ae7930}.story-copy>p{line-height:1.9}
+footer{background:#72170f;color:#f3dfb9;border-top:5px solid #b78948;padding:55px 7.5%;gap:35px}footer .brand{color:#f6e5c4}footer p,footer>span{color:#d3b98b}footer a:hover{color:#fff8e7}
+.creator-heading,.manage-page,.credits-page{position:relative}
+.creator-heading{padding:65px 20px 40px;background:linear-gradient(#fff8e9dc,#fff8e9ed),url('/images/festival-hero.webp') center 35%/cover;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.creator-heading h1{font-size:clamp(32px,4vw,54px);margin-bottom:12px}.creator-heading em{color:#9f6a2a}.creator-heading .ornament{margin-bottom:0}
+.creator-grid{max-width:1240px;gap:65px;padding-top:55px;padding-bottom:90px}
+.creator-form{background:#fff9ee;border:1px solid #caa66a;box-shadow:0 12px 36px #74511e10;padding:36px;border-radius:3px}
+.creator-form legend{color:#8f2113;font-family:'Noto Serif Bengali',serif;font-size:25px}.creator-form label{color:#724b2e}
+.creator-form input:not([type=checkbox]):not([type=range]),.creator-form textarea,.creator-form select,.import-link input,.private-link input{background:#fffcf5;border-color:#d9bd8b;border-radius:3px;color:#573b29}
+.creator-form input:focus,.creator-form textarea:focus,.creator-form select:focus{border-color:#9b5f25;outline-color:#bf903d}
+.preview-column{top:25px}.preview-column>.eyebrow{text-align:center;color:#965a23;padding-bottom:15px}
+.form-divider{border-color:#d2ae7355}.consent{background:#f6ead5;padding:14px;border-radius:3px}.form-note,.preview-caption{color:#806346}
+.created-panel{background:#fff7e7;border:1px solid #c5a05f;padding:45px;margin-top:45px;margin-bottom:70px;box-shadow:0 15px 40px #6b46161a}
+.manage-page{min-height:70svh;max-width:1080px;padding:65px 30px 85px;margin:auto}.manage-page>h1{font-size:clamp(32px,4vw,52px);margin-bottom:14px}.manage-page>.eyebrow{color:#a56d2b}
+.empty-state{background:linear-gradient(135deg,#fffaf1,#f3e3c4);border:1px solid #c9a56a;padding:55px 20px;box-shadow:inset 0 0 0 7px #fff7e8,0 10px 30px #69451d0f;margin:35px 0}
+.empty-state h2{font-size:27px}.saved-card{border:1px solid #c8a366;background:#fff9ed;box-shadow:0 8px 22px #6c431113;border-radius:3px;padding:28px}.saved-card h2{color:#8e2114}
+.import-link{background:#f2e3c8;border:1px solid #d0b17b;border-radius:3px;padding:25px}.credits-page{max-width:920px;padding:65px 28px;line-height:1.95}.credits-page h1{font-size:clamp(30px,4vw,48px)}
+.festival-audio{border-color:#b98543;background:#fff4dfeb;color:#8f2113;box-shadow:0 4px 15px #3f1b2030;z-index:60}
+@media(min-width:1600px){.invitation-experience .hero-copy h1{font-size:86px}.invitation-experience .experience-scene{padding-top:15svh}}
+@media(max-width:1100px){.site-header{padding:18px 5%}.site-header nav{margin-right:13%;gap:22px}.brand{font-size:28px}.brand small{font-size:9px;letter-spacing:1.3px}.invitation-experience .envelope-wrap{width:min(53vw,65svh)}.greeting-layout{gap:45px}}
+@media(max-width:767px){
+ .site-header{height:112px;display:flex;flex-direction:column;justify-content:center;gap:8px;padding:12px 14px;background:#fff8e9}
+ .brand{font-size:25px;gap:7px}.brand .brand-sprig{height:35px;width:21px}.brand small{font-size:8px;letter-spacing:1.7px;margin-top:3px}
+ .site-header nav{display:flex;gap:24px;margin:0;font-size:12px;justify-content:center;width:100%}.site-header nav>a{min-height:34px;padding:5px 0}.nav-lotus{display:none}
+ .invitation-experience>.site-header{background:linear-gradient(#fff8e9dd,#fff8e900)}
+ .invitation-experience .experience-scene{height:100svh;padding:135px 14px 0}
+ .invitation-experience .autumn-field{background-position:57% center;background-size:auto 100%}
+ .invitation-experience .autumn-field:after{content:'';position:absolute;inset:0;background:linear-gradient(#fff6e650,#fff6e690 22%,transparent 66%)}
+ .invitation-experience .hero-copy h1{font-size:clamp(29px,7.6vw,48px);line-height:1.35;letter-spacing:-1.2px}
+ .invitation-experience .hero-copy h1 span{font-size:.76em;white-space:nowrap}
+ .invitation-experience .hero-copy .ornament{margin:9px auto 14px}.invitation-experience .hero-copy .ornament span{width:55px}
+ .invitation-experience .hero-copy>p:last-child{font-size:13px;max-width:290px;line-height:1.7}
+ .invitation-experience .envelope-wrap{width:min(86vw,510px);top:65%}
+ .invitation-experience .scene-actions{bottom:76px;gap:7px}
+ .invitation-experience .scene-actions p{font-size:11px;padding:3px 12px;max-width:95%;line-height:1.7}
+ .invitation-experience .scene-actions .primary{font-size:13px;min-height:42px;padding:8px 24px}
+ .invitation-experience .read-prompt{top:23%;font-size:17px;padding:8px 20px}
+ .greeting{padding:65px 22px}.greeting-layout{gap:50px}.greeting-aside{text-align:center}.greeting-aside .ornament{justify-content:center}.greeting-aside h2{font-size:34px}.greeting-aside>img{max-width:350px;margin:25px auto 0}
+ .story-copy{padding:45px 25px}.story-photo img{min-height:280px}.festival-story{min-height:0}.creator-heading{padding:40px 18px 30px}.creator-grid{padding:35px 20px 60px;gap:40px}.creator-form{padding:24px 18px}.creator-form legend{font-size:22px}.created-panel{margin:25px 18px 50px;padding:25px 18px}.manage-page{padding:40px 20px 60px}.saved-card{padding:22px}.empty-state{padding:38px 18px}.empty-state h2{font-size:23px}.import-link{padding:20px}footer{padding:40px 25px;gap:25px}
+}
+@media(max-width:767px) and (max-height:680px){.invitation-experience .experience-scene{padding-top:118px}.invitation-experience .hero-copy h1{font-size:29px}.invitation-experience .hero-copy>p:last-child{font-size:11px;line-height:1.6;max-width:245px}.invitation-experience .hero-copy .ornament{margin:4px auto 8px}.invitation-experience .envelope-wrap{top:65%;width:79vw}.invitation-experience .scene-actions{bottom:65px}.invitation-experience .scene-actions p{font-size:10px}.invitation-experience .scene-actions .primary{min-height:37px;padding:6px 20px;font-size:12px}}
+@media(orientation:landscape) and (max-height:540px){.site-header{height:70px;flex-direction:row;justify-content:space-between;padding:12px 25px}.site-header nav{width:auto;gap:20px}.brand small{display:none}.invitation-experience .experience-scene{padding-top:90px}.invitation-experience .hero-copy h1{font-size:32px}.invitation-experience .hero-copy .ornament{margin:3px auto}.invitation-experience .hero-copy>p:last-child{display:none}.invitation-experience .envelope-wrap{width:43svh;top:72%;left:38%}.invitation-experience .scene-actions{left:auto;right:25px;width:210px;bottom:82px}.invitation-experience .scene-actions p{font-size:10px}.invitation-experience .hero-copy h1 span{font-size:.75em}}
+@media(prefers-reduced-motion:reduce){.invitation-experience .envelope-photo{display:none}.invitation-experience .hero-copy{opacity:1}.invitation-experience .envelope-wrap{top:68%;width:min(75vw,470px)}.invitation-experience .experience-scene{min-height:640px}.invitation-experience .envelope-runway{height:auto}.invitation-experience .read-prompt{display:none}}
+/* Only paper and gold details continue onto the animated folds. */
+.invitation-experience .flap-face.front,.invitation-experience .envelope-front{background-size:100% 100%,280% 280%;background-position:center,0 0}
+@media(min-width:768px) and (max-width:950px){.site-header nav{margin-right:0;gap:20px;font-size:12px}.brand{font-size:26px}.site-header{gap:20px}.nav-lotus{padding-left:15px}}
+@media(min-width:768px) and (max-height:800px){.invitation-experience .experience-scene{padding-top:105px}.invitation-experience .hero-copy h1{font-size:clamp(40px,4.5vw,64px)}.invitation-experience .hero-copy .ornament{margin:5px auto 10px}.invitation-experience .hero-copy>p:last-child{font-size:15px;max-width:400px}.invitation-experience .envelope-wrap{top:67%;width:min(44vw,67svh)}}
+@media(max-width:767px) and (orientation:portrait){.invitation-experience .autumn-field{background-image:url('/images/festival-hero-mobile.webp');background-position:center;background-size:cover}.invitation-experience .autumn-field:after{background:linear-gradient(#fff7e520,#fff7e540 28%,transparent 58%)}}
+.invitation-experience .hero-copy>p:last-child{color:#58351f;text-shadow:0 1px 8px #fff8ed,0 0 18px #fff8ed}
+@media(max-width:767px){.invitation-experience>.site-header{background:linear-gradient(#fff8e9f2,#fff8e9dd 85%,#fff8e900)}}

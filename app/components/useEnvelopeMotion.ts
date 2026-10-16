@@ -24,6 +24,7 @@ export function useEnvelopeMotion(root:RefObject<HTMLElement|null>,runway:RefObj
      .to('.hero-copy',{opacity:0,y:-20,duration:.6},.12)
      .to('.festival-poster',{opacity:.24,scale:.94,duration:.75},.12)
      .fromTo('.envelope',{rotation:-2},{rotation:0,duration:.7},.12)
+     .to('.envelope-photo',{opacity:0,duration:.55},.5)
      .to('.seal',{rotation:-12,scale:.96,y:-4,duration:.2},.3)
      .to('.seal',{rotation:18,rotationX:38,y:28,x:12,opacity:0,duration:.45,ease:'power1.in'},.5)
      .to('.flap',{rotationX:-90,duration:.6,ease:'power1.in'},.85)
